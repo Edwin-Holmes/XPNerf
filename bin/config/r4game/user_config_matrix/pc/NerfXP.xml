@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<UserConfig>
+    <Group id="NerfXP" displayName="Mods.NerfXP">
+        <PresetsArray>
+            <Preset id="0" displayName="NerfXP_Preset_Default">
+                <Entry varId="XPScale" value="0"/>
+            </Preset>
+        </PresetsArray>
+        <VisibleVars>
+            <Var id="XPScale_Init" displayName="" displayType="TOGGLE" visibilityCondition="hideAlways"/>
+            <Var id="XPScale" displayName="XP_Scale" displayType="SLIDER;0;100;20"/>
+        </VisibleVars>
+    </Group>
+</UserConfig>
