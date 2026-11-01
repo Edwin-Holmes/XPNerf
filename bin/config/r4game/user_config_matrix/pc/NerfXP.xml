@@ -8,6 +8,8 @@
                 <Entry varId="XPScaleMid" value="20"/>
                 <Entry varId="BandLimitMid" value="20"/>
                 <Entry varId="XPScaleHigh" value="20"/>
+                <Entry varId="RoundUp" value ="false"
+                <Entry varId="XpFloor" value ="false"
             </Preset>
         </PresetsArray>
         <VisibleVars>
@@ -19,6 +21,9 @@
             <Var id="BandLimitMid" displayName="BandLimit_Mid" displayType="SLIDER;1;100;99" tags="indent"/>
             <Var id="Separator2" displayName="" displayType="SUBTLE_SEPARATOR"/>
             <Var id="XPScaleHigh" displayName="XPScale_High" displayType="SLIDER;0;100;20"/>
+            <Var id="Separator2" displayName="" displayType="SUBTLE_SEPARATOR"/>
+            <Var id="RoundUp" displayName="Round_Up" displayType="TOGGLE"/>
+            <Var id="XpFloor" displayName="Xp_Floor" displayType="TOGGLE"/>
         </VisibleVars>
     </Group>
 </UserConfig>

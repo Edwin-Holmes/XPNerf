@@ -1,8 +1,11 @@
 @wrapMethod(W3LevelManager) function AddPoints(type : ESpendablePointType, amount : int, show : bool) {
+    var menu            : CInGameConfigWrapper = theGame.GetInGameConfigWrapper();
     var xpScale         : float; 
     var relativeLevel   : int; 
-    var limitLow        : int = StringToInt(theGame.GetInGameConfigWrapper().GetVarValue('NerfXP', 'BandLimitLow'), 10);
-    var limitMid        : int = StringToInt(theGame.GetInGameConfigWrapper().GetVarValue('NerfXP', 'BandLimitMid'), 20);
+    var limitLow        : int = StringToInt(menu.GetVarValue('NerfXP', 'BandLimitLow'), 10);
+    var limitMid        : int = StringToInt(menu.GetVarValue('NerfXP', 'BandLimitMid'), 20);
+    var roundUp         : bool = menu.GetVarValue('NerfXP', 'RoundUp');
+    var xpFloor         : bool = menu.GetVarValue('NerfXP', 'XpFloor');
 
     if (type == EExperiencePoint) {
         if (FactsQuerySum("NewGamePlus") > 0) {
@@ -25,7 +28,16 @@
             }
         }
 
-        amount = RoundF(amount * xpScale);
+        if (roundUp) {
+            amount = CeilF(amount * xpScale);
+        }
+        else {
+            amount = RoundF(amount * xpScale);
+        }
+
+        if (xpFloor) {
+            if (amount == 0) amount = 1;
+        }
     }
 
     wrappedMethod(type, amount, show);
@@ -60,6 +72,8 @@ function XPNerfInit() {
         theGame.GetInGameConfigWrapper().SetVarValue('NerfXP', 'XPScaleHigh', "0");
         theGame.GetInGameConfigWrapper().SetVarValue('NerfXP', 'BandLimitLow', "10");
         theGame.GetInGameConfigWrapper().SetVarValue('NerfXP', 'BandLimitMid', "20");
+        theGame.GetInGameConfigWrapper().SetVarValue('NerfXP', 'RoundUp', "false");
+        theGame.GetInGameConfigWrapper().SetVarValue('NerfXP', 'XpFloor', "false");
         
         theGame.GetInGameConfigWrapper().SetVarValue('NerfXP', 'XPNerfInit', "true");
     }

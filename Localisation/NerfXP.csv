@@ -1,4 +1,5 @@
 ;meta[language=en]
+;meta[version=164]
 ; id      |key(hex)|key(str)| text
 ;
 ; comment lines use ; as first character
@@ -22,3 +23,5 @@
 2110999007||option_XPScale_Mid|Band 2: Reduce XP By (%)
 2110999008||option_BandLimit_Mid|From "Band 1" to Level
 2110999009||option_XPScale_High|XP Reduction from "Band 2" to Max Level
+2110999010||option_Round_Up|Generous Rounding
+2110999011||option_Xp_Floor|1 XP Minimum

@@ -1,0 +1,25 @@
+;meta[language=en]
+;meta[version=164]
+; id      |key(hex)|key(str)| text
+;
+; comment lines use ; as first character
+; all comment lines (except the two line header) will be ignored
+;
+2110999000|        ||This string is accessible only by its id 2110999000
+;
+; w3strings.exe --encode CombatResources.w3strings.csv --force-ignore-id-space-check-i-know-what-i-am-doing
+; example: key strings, useable characters: a-z0-9_       id=0616
+; inbetween this comment and above comment is where you should put custom strings
+; override some game strings
+;
+; Main Menu
+2110999001||panel_Mods|Mods
+; Group Header
+2110999002||panel_NerfXP|Nerf XP
+2110999003||preset_mods_NerfXP|XP Reduction
+2110999004||preset_value_NerfXP_Default|Default
+2110999005||option_XPScale_Low|Band 1: Reduce XP By (%)
+2110999006||option_BandLimit_Low|Up to Level
+2110999007||option_XPScale_Mid|Band 2: Reduce XP By (%)
+2110999008||option_BandLimit_Mid|From "Band 1" to Level
+2110999009||option_XPScale_High|XP Reduction from "Band 2" to Max Level
